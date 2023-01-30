@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}FEEDBACK{% endblock title %}
+
+
+{% block body %}
+<h1 style="border-bottom: 1px solid black;">FEEDBACK</h1><br><br><br>
+
+<div id="bdy">
+    <form method="post" action="/feedback">
+        {% csrf_token %}
+        <label for="name" style="color: white;">Name </label>
+        <input type="text" id="name" name="Name" placeholder="Type Name here"><br><br>
+
+        <label for="email" style="color: white;">Email</label>
+        <input type="email" id="email" name="email" placeholder="Type email here"><br><br>
+
+        <label for="pno" style="color: white;">Mobile </label>
+        <input type="number"  name="pno"><br><br>
+
+        <button class="btn btn-primary" type="submit">Submit Form</button><br>
+
+        <br><input type="text" placeholder="Write Feedback Here" style="padding: 40px;">
+    </form>
+</div>
+<style>
+    #bdy {
+        text-align: center;
+        background-image: url(../static/pic4.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    
+
+        padding: 40px;
+    }
+</style>
+{% endblock body %}
